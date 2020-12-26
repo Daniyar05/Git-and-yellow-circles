@@ -1,22 +1,16 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
-from PyQt5.QtWidgets import QWidget, QLabel, QGridLayout
-from PyQt5.QtGui import QPainter, QPixmap, QPen, QColor
+from PyQt5.QtGui import QPainter, QColor
 from random import randint
-import math
-from PIL import Image, ImageDraw
-from PyQt5.QtGui import QPainter, QPen, QBrush
-from PyQt5.QtCore import Qt
 
 
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
         self.do_paint = False
-        uic.loadUi('UI.ui', self)  # Загружаем дизайн
+        uic.loadUi('UI.ui', self)  
         self.pushButton.clicked.connect(self.paint)
-        # Обратите внимание: имя элемента такое же как в QTDesigner
 
     def paintEvent(self, event):
         if self.do_paint:
